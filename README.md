@@ -65,6 +65,9 @@ cd zipnerf-pytorch
 conda create --name zipnerf python=3.9
 conda activate zipnerf
 
+# Using CUDA 2.11 requires installing torch pre-release
+pip3 install --pre torch torchvision torchaudio --index-url https://download.pytorch.org/whl/nightly/cu121
+
 # Install requirements.
 pip install -r requirements.txt
 
@@ -77,7 +80,7 @@ pip install ./nvdiffrast
 
 # Install a specific cuda version of torch_scatter 
 # see more detail at https://github.com/rusty1s/pytorch_scatter
-CUDA=cu117
+CUDA=cu121
 pip install torch-scatter -f https://data.pyg.org/whl/torch-2.0.0+${CUDA}.html
 ```
 
